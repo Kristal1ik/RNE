@@ -56,10 +56,11 @@ import itertools
 # print(s)
 
 s = set()
-word = "тимофей"
-for w in itertools.product(word, repeat=5):
+word = "парабола"
+for w in itertools.permutations(word, r=8):
     w = "".join(w)
-    if w.count("т") >= 1 and w.count("й") <=1:
+    w2 = w.replace("о", "а").replace("р", "п").replace("б", "п").replace("л", "п")
+    if "пп" not in w2 and "аа" not in w2:
         s.add(w)
 print(len(s))
 print(s)
