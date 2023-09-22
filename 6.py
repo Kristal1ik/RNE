@@ -55,12 +55,35 @@ import itertools
 # print(len(s))
 # print(s)
 
+# s = set()
+# word = "парабола"
+# for w in itertools.permutations(word, r=8):
+#     w = "".join(w)
+#     w2 = w.replace("о", "а").replace("р", "п").replace("б", "п").replace("л", "п")
+#     if "пп" not in w2 and "аа" not in w2:
+#         s.add(w)
+# print(len(s))
+# print(s)
+
+# s = set()
+# word = "01234567"
+# for w in itertools.product(word, repeat=5):
+#     w = "".join(w)
+#     w2 = w.replace("2", "0").replace("3", "1").replace("4", "0").replace("5", "1").replace("6", "0").replace("7", "1")
+#     if "1" not in w and "11" not in w2 and "00" not in w2 and w[0] != "0":
+#         i2 = set(w)
+#         if len(w) == len(i2):
+#             s.add(w)
+# print(len(s))
+# print(s)
+import math
+
 s = set()
-word = "парабола"
-for w in itertools.permutations(word, r=8):
+word = sorted("алгоритм")
+n = 1
+for w in itertools.product(word, repeat=5):
     w = "".join(w)
-    w2 = w.replace("о", "а").replace("р", "п").replace("б", "п").replace("л", "п")
-    if "пп" not in w2 and "аа" not in w2:
+    if w[0] != "г" and w.count("и") >= 2 and n % 2 != 0:
         s.add(w)
+    n += 1
 print(len(s))
-print(s)
