@@ -60,11 +60,26 @@ def f_three(n):
 #         print(i, n_new)
 #         break
 
-for i in range(1000):
-    n = bin(i)[2:]
-    if n.count("1") % 2 == 0:
-        n = "1" + n + "00"
-    else:
-        n = "11" + n
-    if int(n, 2) >= 412:
-        print(i, int(n, 2))
+# for i in range(1000):
+#     n = bin(i)[2:]
+#     if n.count("1") % 2 == 0:
+#         n = "1" + n + "00"
+#     else:
+#         n = "11" + n
+#     if int(n, 2) >= 412:
+#         print(i, int(n, 2))
+
+for i in range(1000, 10000):
+    i = str(i)
+    lst = []
+    first = int(i[0]) + int(i[1])
+    second = int(i[1]) + int(i[2])
+    third = int(i[2]) + int(i[3])
+    lst.append(first)
+    lst.append(second)
+    lst.append(third)
+    lst.sort()
+    answ = str(lst[1]) + str(lst[2])
+    if answ == "1517":
+        print(i)
+
