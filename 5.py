@@ -52,10 +52,19 @@ def f_three(n):
 #         lst.append(i)
 # print(min(lst))
 
-for i in range(131, 256):
-    n = bin(i)[2:].rjust(8, "0")
-    n_new = n[:2] + n[-2:]
-    n_new = int(n_new, 2)
-    if n_new == 10:
-        print(i, n_new)
-        break
+# for i in range(131, 256):
+#     n = bin(i)[2:].rjust(8, "0")
+#     n_new = n[:2] + n[-2:]
+#     n_new = int(n_new, 2)
+#     if n_new == 10:
+#         print(i, n_new)
+#         break
+
+for i in range(1000):
+    n = bin(i)[2:]
+    if n.count("1") % 2 == 0:
+        n = "1" + n + "00"
+    else:
+        n = "11" + n
+    if int(n, 2) >= 412:
+        print(i, int(n, 2))
