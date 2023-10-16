@@ -69,17 +69,28 @@ def f_three(n):
 #     if int(n, 2) >= 412:
 #         print(i, int(n, 2))
 
-for i in range(1000, 10000):
-    i = str(i)
-    lst = []
-    first = int(i[0]) + int(i[1])
-    second = int(i[1]) + int(i[2])
-    third = int(i[2]) + int(i[3])
-    lst.append(first)
-    lst.append(second)
-    lst.append(third)
-    lst.sort()
-    answ = str(lst[1]) + str(lst[2])
-    if answ == "1517":
-        print(i)
+# for i in range(1000, 10000):
+#     i = str(i)
+#     lst = []
+#     first = int(i[0]) + int(i[1])
+#     second = int(i[1]) + int(i[2])
+#     third = int(i[2]) + int(i[3])
+#     lst.append(first)
+#     lst.append(second)
+#     lst.append(third)
+#     lst.sort()
+#     answ = str(lst[1]) + str(lst[2])
+#     if answ == "1517":
+#         print(i)
 
+for i in range(1000):
+    str_ = [''.join(bin(int(j))[2:].rjust(4, "0") for j in str(i))]
+    str_1 = ''
+    for j in str_:
+        for k in j:
+            if k == "1":
+                str_1 += "0"
+            else:
+                str_1 += "1"
+    if int(str_1, 2) == 151:
+        print(i)
