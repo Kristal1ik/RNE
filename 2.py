@@ -23,12 +23,7 @@ for x in range(2):
                 F2 = int((w <= x) <= (y == z))
                 print(x, y, z, w, F1, F2)
 
-x y z w f1 f2
 
-
-1 0 1 1 1 0
-0 1 1 0 1 1
-1 0 1 0 0 0
 
 
 

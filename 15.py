@@ -1,5 +1,6 @@
-from turtle import *
-speed(0)
+# from turtle import *
+#
+# speed(0)
 # forward(100)
 # right(90)
 # forward(120)
@@ -69,3 +70,8 @@ speed(0)
 # down()
 
 
+for A in range(1000):
+    for x in range(1000):
+        for y in range(1000):
+            if not((3 * x + y > 48) or (x > y) or (4 * x + y < A)):
+                print(A)

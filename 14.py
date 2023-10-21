@@ -40,3 +40,23 @@ def f_ss(n, ss):
 # for a in range(100):
 #     if all(x & 29 == 0 or (x & 17 != 0 or x & a) for x in range(100)):
 #         print(a)
+a = []
+
+ for x in range(37):
+    for y range(37):
+        if (1*37 ** 7 + 2 * 37 ** 6 + )
+
+ ( * ** + * ** + x* ** + * ** +
+
+ * ** + * ** + y* ** + * ** ) % == :
+
+ a.append(y* ** + x* ** )
+
+print(max(a))
+for in
+for in
+if
+0 37
+0 37
+1 37 7 2 37 6 37 5 6 37 4
+4

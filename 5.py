@@ -83,14 +83,24 @@ def f_three(n):
 #     if answ == "1517":
 #         print(i)
 
-for i in range(1000):
-    str_ = [''.join(bin(int(j))[2:].rjust(4, "0") for j in str(i))]
-    str_1 = ''
-    for j in str_:
-        for k in j:
-            if k == "1":
-                str_1 += "0"
-            else:
-                str_1 += "1"
-    if int(str_1, 2) == 151:
-        print(i)
+# for i in range(1000):
+#     str_ = [''.join(bin(int(j))[2:].rjust(4, "0") for j in str(i))]
+#     str_1 = ''
+#     for j in str_:
+#         for k in j:
+#             if k == "1":
+#                 str_1 += "0"
+#             else:
+#                 str_1 += "1"
+#     if int(str_1, 2) == 151:
+#         print(i)
+count = 0
+for n in range(1222222222, 1555555667):
+    n1 = bin(n)[2:]
+    n1 = n1 + "0" + bin(n % 3)[2:]
+    n2 = int(n1, 2)
+    n1 += "0" + bin(n2 % 5)[2:]
+    count += 1
+print(count)
+# print(int(n1, 2))
+
