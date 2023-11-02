@@ -1,4 +1,3 @@
-import itertools
 
 # with open("26_1") as f:
 #     data = f.read().splitlines()
@@ -77,24 +76,48 @@ import itertools
 #         seconds[i] += 1
 # print(max(seconds))
 
-f = open('26_3')
+# f = open('26_4.txt')
+# s, n = list(map(int, f.readline().split()))
+# data = []
+# for i in range(n):
+#     data.append(int(f.readline()))
+# data.sort()
+# count = 0
+# summa = 0
+# max_ = 0
+# for i in range(n):
+#     if data[i] + summa < s:
+#         count += 1
+#         summa += data[i]
+#         max_ = data[i]
+#     else:
+#         break
+# for i in range(n-1, 0, -1):
+#     if summa - max_ + data[i] < s:
+#         max_ = data[i]
+#         break
+# print(summa, max_)
+
+f = open("26_4.txt")
 s, n = list(map(int, f.readline().split()))
 data = []
 for i in range(n):
     data.append(int(f.readline()))
 data.sort()
+print(s, data)
+
+summ_ = 0
 count = 0
-summa = 0
 max_ = 0
-for i in range(n):
-    if data[i] + summa < s:
+for i in data:
+    if summ_ + i <= s:
         count += 1
-        summa += data[i]
-        max_ = data[i]
+        summ_ += i
+        max_ = i
     else:
         break
 for i in range(n-1, 0, -1):
-    if summa - max_ + data[i] < s:
+    if summ_ - max_ + data[i] <= s:
         max_ = data[i]
         break
-print(summa, max_)
+print(count, max_)
