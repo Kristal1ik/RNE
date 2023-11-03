@@ -1,3 +1,4 @@
+from random import randint
 
 # matrix = [[1, 2, 3], [4, 5, 6]]
 # k = int(input())
@@ -15,7 +16,6 @@
 #     for j in range(0, len(matrix[i]), 2):
 #         print(matrix[i][j] )
 
-# from random import randint
 #
 # m = 5
 # n = 5
@@ -44,7 +44,6 @@
 # print(middle)
 # print(s, stolb)
 
-from random import randint
 
 m = int(input())
 matr = []
