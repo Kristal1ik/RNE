@@ -164,6 +164,8 @@
 #                     m = summ
 #
 # print(c, m)
+
+# Системный администратор 
 f = open('28139.txt')
 data = f.readlines()
 s = data[0].split()
