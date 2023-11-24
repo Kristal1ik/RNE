@@ -75,7 +75,7 @@
 #         seconds[i] += 1
 # print(max(seconds))
 
-# f = open('26_4.txt')
+# f = open('27885.txt')
 # s, n = list(map(int, f.readline().split()))
 # data = []
 # for i in range(n):
@@ -148,19 +148,37 @@
 #         mx = mxx
 # print(mx)
 
-f = open('inf_26_04_21_26.txt')
+# f = open('inf_26_04_21_26.txt')
+# data = f.readlines()
+# n = list(map(int, data))
+# m = 0
+# c = 0
+# ns = set(n)
+# for i in range(1, len(n) - 1):
+#     for j in range(i + 1, len(n)):
+#         if (n[i] + n[j]) % 2 == 0:
+#             summ = n[i] + n[j]
+#             if summ in ns:
+#                 c += 1
+#                 if summ > m:
+#                     m = summ
+#
+# print(c, m)
+f = open('28139.txt')
 data = f.readlines()
-n = list(map(int, data))
-m = 0
-c = 0
-ns = set(n)
-for i in range(1, len(n) - 1):
-    for j in range(i + 1, len(n)):
-        if (n[i] + n[j]) % 2 == 0:
-            summ = n[i] + n[j]
-            if summ in ns:
-                c += 1
-                if summ > m:
-                    m = summ
-
-print(c, m)
+s = data[0].split()
+s = int(s[0])
+del (data[0])  # первая строка больше не нужна, удаляем ее
+for i in range(0, len(data)):
+    data[i] = int(data[i])
+data = sorted(data)
+summa = 0
+for count in range(0, len(data)):
+    if summa + data[count] > s: break
+    summa += data[count]
+print(count)
+zapas = s - summa
+for i in range(0, len(data)):
+    if data[i] - data[count - 1] <= zapas:
+        itog = data[i]
+print(itog)
