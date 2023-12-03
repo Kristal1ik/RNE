@@ -41,6 +41,15 @@ def f_three(n):
     return s
 
 
+def f_four(n):
+    s = ""
+    while n > 0:
+        ost = n % 4
+        s = str(ost) + s
+        n = n // 4
+    return s
+
+
 #
 # lst = []
 # for i in range(1, 1000):
@@ -94,13 +103,41 @@ def f_three(n):
 #                 str_1 += "1"
 #     if int(str_1, 2) == 151:
 #         print(i)
-count = 0
-for n in range(1222222222, 1555555667):
-    n1 = bin(n)[2:]
-    n1 = n1 + "0" + bin(n % 3)[2:]
-    n2 = int(n1, 2)
-    n1 += "0" + bin(n2 % 5)[2:]
-    count += 1
-print(count)
+# count = 0
+# for n in range(1222222222, 1555555667):
+#     n1 = bin(n)[2:]
+#     n1 = n1 + "0" + bin(n % 3)[2:]
+#     n2 = int(n1, 2)
+#     n1 += "0" + bin(n2 % 5)[2:]
+#     count += 1
+# print(count)
 # print(int(n1, 2))
+# def f(n):
+#     r = f_four(n)
+#     if n % 4 == 0:
+#         r += r[-2:]
+#     else:
+#         r += f_four((n % 4) * 2)
+#
+#     if int(r, 4) < 369:
+#         return n
+#     else:
+#         return False
+#
+#
+# for i in range(1, 1000):
+#     print(f(i))
 
+import sys
+
+sys.setrecursionlimit(100000)
+
+
+def f(n):
+    if n < 11:
+        return 10
+    if n >= 11:
+        return n + f(n - 1)
+
+
+print(f(2124) - f(2122))
