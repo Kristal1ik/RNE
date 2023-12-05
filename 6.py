@@ -55,15 +55,7 @@ import itertools
 # print(len(s))
 # print(s)
 
-# s = set()
-# word = "парабола"
-# for w in itertools.permutations(word, r=8):
-#     w = "".join(w)
-#     w2 = w.replace("о", "а").replace("р", "п").replace("б", "п").replace("л", "п")
-#     if "пп" not in w2 and "аа" not in w2:
-#         s.add(w)
-# print(len(s))
-# print(s)
+#
 
 # s = set()
 # word = "01234567"
@@ -76,14 +68,15 @@ import itertools
 #             s.add(w)
 # print(len(s))
 # print(s)
-import math
-
-s = set()
-word = sorted("алгоритм")
-n = 1
-for w in itertools.product(word, repeat=5):
-    w = "".join(w)
-    if w[0] != "г" and w.count("и") >= 2 and n % 2 != 0:
-        s.add(w)
-    n += 1
-print(len(s))
+# import math
+#
+# s = set()
+# word = sorted("алгоритм")
+# n = 1
+# for w in itertools.product(word, repeat=5):
+#     w = "".join(w)
+#     print(w)
+#     if w[0] != "г" and w.count("и") >= 2 and n % 2 != 0:
+#         s.add(w)
+#     n += 1
+# print(len(s))
