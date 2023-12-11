@@ -35,13 +35,22 @@ sys.setrecursionlimit(1000000)
 #
 # print(f(28))
 
+# def f(n):
+#     if n >= 2000:
+#         return 2000
+#     if n < 2000 and n % 2 != 0:
+#         return n * f(n + 1)
+#     if n < 2000 and n % 2 == 0:
+#         return n * f(n + 1) / 2
+#
+#
+# print(f(1998) / f(2001))
+
 def f(n):
-    if n >= 2000:
-        return 2000
-    if n < 2000 and n % 2 != 0:
-        return n * f(n + 1)
-    if n < 2000 and n % 2 == 0:
-        return n * f(n + 1) / 2
+    if n == 1:
+        return 3
+    if n > 1:
+        return 3 * n + 2 * f(n - 1)
 
 
-print(f(1998) / f(2001))
+print(f(2024) - 4 * f(2022))
