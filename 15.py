@@ -73,9 +73,7 @@
 for A in range(300):
     n = 0
     for x in range(300):
-        for y in range(300):
-            if (x + 2 * y < A) or (y > x) or (x > 60):
-                n += 1
-    if n == 90000:
+        if ((x & 42 != 0) or (x & 13 != 0)) <= ((x & 30 == 0) <= (x & A != 0)):
+            n += 1
+    if n == 300:
         print(A)
-
