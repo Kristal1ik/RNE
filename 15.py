@@ -70,8 +70,12 @@
 # down()
 
 
-for A in range(1000):
-    for x in range(1000):
-        for y in range(1000):
-            if not((3 * x + y > 48) or (x > y) or (4 * x + y < A)):
-                print(A)
+for A in range(300):
+    n = 0
+    for x in range(300):
+        for y in range(300):
+            if (x + 2 * y < A) or (y > x) or (x > 60):
+                n += 1
+    if n == 90000:
+        print(A)
+
