@@ -110,8 +110,26 @@
 #         max_k = k
 # print(max_k)
 
-import collections
+# import collections
+#
+# s = input()
+# cnt = collections.Counter(s)
+# print(cnt.most_common(1)[0][0])
 
-s = input()
-cnt = collections.Counter(s)
-print(cnt.most_common(1)[0][0])
+with open("24_4.txt") as file:
+    data = file.readline()
+d = {}
+for i in range(1, len(data)-1):
+    if data[i-1] == data[i+1]:
+        if data[i] not in d:
+            d[data[i]] = 1
+        else:
+            d[data[i]] += 1
+max_k = ""
+max_v = 0
+
+for k, v in d.items():
+    if max_v < v:
+        max_v = v
+        max_k = k
+print(max_k)
