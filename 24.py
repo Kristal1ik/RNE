@@ -69,29 +69,43 @@
 # print(d)
 # print(max(d.values()))
 
-with open("24_3.txt") as file:
-    data = file.readline().lower()
-min_g = 1000000000
-index = 0
-for i in range(len(data)):
-    if min_g > data[i].count("G"):
-        min_g = data[i].count("G")
-        index = i
+# with open("24_3.txt") as file:
+#     data = file.readline().lower()
+# min_g = 1000000000
+# index = 0
+# for i in range(len(data)):
+#     if min_g > data[i].count("G"):
+#         min_g = data[i].count("G")
+#         index = i
+#
+#
+# print(min_g, index)
+# d = {}
+# s = "abcdefghijklmnopqrstuvwxyz"
+#
+# for i in range(27):
+#     d[s[i]] = 0
+# print(len((data)))
+# for i in range(len(data)):
+#     if i == index:
+#         for j in data[i]:
+#             print(i)
+#
+#             print(d[j])
+#             d[j] += 1
+# print(d)
 
-
-print(min_g, index)
+s = input()
 d = {}
-s = "abcdefghijklmnopqrstuvwxyz"
-
-for i in range(27):
-    d[s[i]] = 0
-print(len((data)))
-for i in range(len(data)):
-    if i == index:
-        for j in data[i]:
-            print(i)
-
-            print(d[j])
-            d[j] += 1
-print(d)
-
+for i in s:
+    if i not in d:
+        d[i] = 1
+    else:
+        d[i] += 1
+max_k = ""
+max_v = 0
+for k, v in d.items():
+    if max_v < v:
+        max_v = v
+        max_k = k
+print(max_k)
