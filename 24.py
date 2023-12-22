@@ -95,17 +95,23 @@
 #             d[j] += 1
 # print(d)
 
+# s = input()
+# d = {}
+# for i in s:
+#     if i not in d:
+#         d[i] = 1
+#     else:
+#         d[i] += 1
+# max_k = ""
+# max_v = 0
+# for k, v in d.items():
+#     if max_v < v:
+#         max_v = v
+#         max_k = k
+# print(max_k)
+
+import collections
+
 s = input()
-d = {}
-for i in s:
-    if i not in d:
-        d[i] = 1
-    else:
-        d[i] += 1
-max_k = ""
-max_v = 0
-for k, v in d.items():
-    if max_v < v:
-        max_v = v
-        max_k = k
-print(max_k)
+cnt = collections.Counter(s)
+print(cnt.most_common(1)[0][0])
