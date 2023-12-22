@@ -56,14 +56,42 @@
 #         n = 1
 # max_n = max(n, max_n)
 # print(max_n)
-s = "abcdefghiujklmnopqrstuvwxyz"
-with open("24_2.txt") as file:
+
+# s = "abcdefghiujklmnopqrstuvwxyz"
+# with open("24_2.txt") as file:
+#     data = file.readline().lower()
+# d = {}
+# for i in range(27):
+#     d[s[i]] = 0
+# for i in range(1, len(data) - 2):
+#     if data[i] == data[i + 1]:
+#         d[data[i + 2]] += 1
+# print(d)
+# print(max(d.values()))
+
+with open("24_3.txt") as file:
     data = file.readline().lower()
+min_g = 1000000000
+index = 0
+for i in range(len(data)):
+    if min_g > data[i].count("G"):
+        min_g = data[i].count("G")
+        index = i
+
+
+print(min_g, index)
 d = {}
+s = "abcdefghijklmnopqrstuvwxyz"
+
 for i in range(27):
     d[s[i]] = 0
-for i in range(1, len(data) - 2):
-    if data[i] == data[i + 1]:
-        d[data[i + 2]] += 1
+print(len((data)))
+for i in range(len(data)):
+    if i == index:
+        for j in data[i]:
+            print(i)
+
+            print(d[j])
+            d[j] += 1
 print(d)
-print(max(d.values()))
+
