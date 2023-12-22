@@ -116,20 +116,46 @@
 # cnt = collections.Counter(s)
 # print(cnt.most_common(1)[0][0])
 
-with open("24_4.txt") as file:
-    data = file.readline()
-d = {}
-for i in range(1, len(data)-1):
-    if data[i-1] == data[i+1]:
-        if data[i] not in d:
-            d[data[i]] = 1
-        else:
-            d[data[i]] += 1
-max_k = ""
-max_v = 0
+# with open("24_4.txt") as file:
+#     data = file.readline()
+# d = {}
+# for i in range(1, len(data)-1):
+#     if data[i-1] == data[i+1]:
+#         if data[i] not in d:
+#             d[data[i]] = 1
+#         else:
+#             d[data[i]] += 1
+# max_k = ""
+# max_v = 0
+#
+# for k, v in d.items():
+#     if max_v < v:
+#         max_v = v
+#         max_k = k
+# print(max_k)
 
-for k, v in d.items():
-    if max_v < v:
-        max_v = v
-        max_k = k
-print(max_k)
+# with open("24_5.txt") as file:
+#     data = file.readline().split("KL")
+# new_data = []
+# for i in data:
+#     new_data.append(i.split("LK"))
+# mx = 0
+# for i in new_data:
+#     for j in i:
+#         mx = max(mx, len(j))
+# print(mx)
+
+
+f = open('24_6.txt')
+n = f.read()
+n = n.replace('AB', 'x').replace('CB', 'x')
+k = 0
+m = 0
+for i in range(len(n)):
+    if n[i] == 'x':
+        k += 1
+        m = max(m, k)
+    else:
+        k = 0
+print(m)
+
