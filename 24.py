@@ -146,16 +146,83 @@
 # print(mx)
 
 
-f = open('24_6.txt')
-n = f.read()
-n = n.replace('AB', 'x').replace('CB', 'x')
-k = 0
-m = 0
-for i in range(len(n)):
-    if n[i] == 'x':
-        k += 1
-        m = max(m, k)
-    else:
-        k = 0
-print(m)
+# f = open('24_6.txt')
+# n = f.read()
+# n = n.replace('AB', 'x').replace('CB', 'x')
+# k = 0
+# m = 0
+# for i in range(len(n)):
+#     if n[i] == 'x':
+#         k += 1
+#         m = max(m, k)
+#     else:
+#         k = 0
+# print(m)
 
+# with open("24_7.txt") as file:
+#     data = file.readline()
+# n = 1
+# mx_n = 0
+# for i in range(1, len(data)):
+#     if int(data[i-1]) > int(data[i]):
+#         n += 1
+#     else:
+#         mx_n = max(mx_n, n)
+#         n = 1
+# print(mx_n)
+
+# with open("24_8.txt") as file:
+#     data = file.read().split()
+#
+# mx = 0
+# n = 0
+# lst = 0
+# for i in range(0, len(data)-1):
+#     if n < 210 and data[i] == "T":
+#         n += 1
+#     else:
+#         mx = max(mx, lst)
+#         n = 0
+#     mx += 1
+# print(mx)
+
+
+# n = 1
+# mx_n = 1
+# with open("24_9.txt") as file:
+#     data = file.read()
+# for i in range(1, len(data)):
+#     if int(data[i]) <= int(data[i-1]):
+#         n += 1
+#     else:
+#         mx_n = max(n, mx_n)
+#         n = 1
+# print(mx_n)
+
+# with open("24_10.txt") as file:
+#     data = file.read()
+# v = 0
+# lst = []
+# for i in range(len(data)):
+#     if data[i] == "V":
+#         lst.append(i)
+
+# for i in range(1, len(data)):
+#     if v < 120 and data[i] == "V":
+#         v += 1
+#     else:
+
+
+with open("24_11.txt") as file:
+    data = file.read()
+n = 0
+max_n = 0
+for i in range(1, len(data) - 1):
+    if data[i] == "P" and data[i-1] == "P":
+        max_n = max(n, max_n)
+        n = 1
+    else:
+        n += 1
+max_n = max(n, max_n)
+
+print(max_n)
