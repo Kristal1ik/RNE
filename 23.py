@@ -77,3 +77,35 @@ def f(x, y, his):
 
 
 print(f(3, 25, [3]))
+
+# def f(n, t):
+#     if n == t:
+#         return 1
+#     if n > t:
+#         return 0
+#     return f(n + 4, t) + f(n * 2, t)
+#
+#
+# print(f(13, 42))
+#
+# def f(n, t, his):
+#     if n == t and 10 in his and 11 not in his and 12 not in his:
+#         return 1
+#     if n > 40:
+#         return 0
+#     return f(n + 1, t, his + [n + 1]) + f(n * 2, t, his + [n * 2]) + f(n ** 2, t, his + [n ** 2])
+#
+#
+# print(f(2, 40, []))
+
+
+def f(n, t, his):
+    if n == t and 10 in his and 20 not in his :
+        return 1
+    if n < 5:
+        return 0
+    return f(n - 2, t, his + [n - 2]) + f(n - 3, t, his + [n - 3]) + f(n // 5, t, his + [n // 5])
+
+
+print(f(41, 5, []))
+
