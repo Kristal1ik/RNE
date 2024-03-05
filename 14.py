@@ -56,3 +56,15 @@ print("git задолбал")
 
 
 
+
+
+
+
+
+
+def f(strhgh):
+    pass
+
+
+f(8)
+
