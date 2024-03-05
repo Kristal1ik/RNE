@@ -47,8 +47,13 @@ def f_ss(n, ss):
 #     else:
 #         print("sd")
 
-
 print("бесит все")
+
+
+
+
+
+
 
 
 
