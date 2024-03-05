@@ -49,6 +49,6 @@ def f_ss(n, ss):
 
 
 print("бесит все")
-wnvwbvb
+wnv
 
 
