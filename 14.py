@@ -50,4 +50,7 @@ def f_ss(n, ss):
 
 print("бесит все")
 print("ls")
+print("git задолбал")
+
+
 
