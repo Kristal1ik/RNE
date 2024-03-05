@@ -46,10 +46,12 @@ def f_ss(n, ss):
 #         print(i)
 #     else:
 #         print("sd")
-
-
-
-
-
+ lkjkj
+\huiu
+oihh\
+    \oijnjjhj
+kjnn
+]nkn\
+    mjon
 
 
