@@ -213,16 +213,32 @@
 #     else:
 
 
-with open("24_11.txt") as file:
-    data = file.read()
-n = 0
-max_n = 0
-for i in range(1, len(data) - 1):
-    if data[i] == "P" and data[i-1] == "P":
-        max_n = max(n, max_n)
-        n = 1
-    else:
-        n += 1
-max_n = max(n, max_n)
+# with open("24_11.txt") as file:
+#     data = file.read()
+# n = 0
+# max_n = 0
+# for i in range(1, len(data) - 1):
+#     if data[i] == "P" and data[i-1] == "P":
+#         max_n = max(n, max_n)
+#         n = 1
+#     else:
+#         n += 1
+# max_n = max(n, max_n)
+#
+# print(max_n)
 
-print(max_n)
+
+with open("24_12.txt") as file:
+    data = file.read()
+mx_posl = 0
+posl = 1
+for i in range(len(data) - 1):
+    if (data[i] == "X" and data[i+1] == "X") or (data[i] == "Y" and data[i+1] == "Y"):
+        if mx_posl < posl:
+            mx_posl = posl
+        posl = 1
+    else:
+        posl += 1
+        # print(data[i], data[i+1])
+
+print(mx_posl)
