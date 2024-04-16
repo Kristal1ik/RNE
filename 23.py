@@ -67,16 +67,16 @@
 # print(f(1, 35, [1]))
 
 
-def f(x, y, his):
-    if x == y and 10 in his and 17 not in his:
-        return 1
-    if x > y:
-        return 0
-    return f(x + 2, y, his + [x + 2]) + \
-           f(x + 3, y, his + [x + 3]) + f(x * 2, y, his + [x * 2])
-
-
-print(f(3, 25, [3]))
+# def f(x, y, his):
+#     if x == y and 10 in his and 17 not in his:
+#         return 1
+#     if x > y:
+#         return 0
+#     return f(x + 2, y, his + [x + 2]) + \
+#            f(x + 3, y, his + [x + 3]) + f(x * 2, y, his + [x * 2])
+#
+#
+# print(f(3, 25, [3]))
 
 # def f(n, t):
 #     if n == t:
@@ -99,13 +99,24 @@ print(f(3, 25, [3]))
 # print(f(2, 40, []))
 
 
+# def f(n, t, his):
+#     if n == t and 10 in his and 20 not in his :
+#         return 1
+#     if n < 5:
+#         return 0
+#     return f(n - 2, t, his + [n - 2]) + f(n - 3, t, his + [n - 3]) + f(n // 5, t, his + [n // 5])
+#
+#
+# print(f(41, 5, []))
+
 def f(n, t, his):
-    if n == t and 10 in his and 20 not in his :
+    if n == t and 25 not in his:
         return 1
-    if n < 5:
+    if n > 115:
         return 0
-    return f(n - 2, t, his + [n - 2]) + f(n - 3, t, his + [n - 3]) + f(n // 5, t, his + [n // 5])
+    return f(n + 3, t, his + [n + 3]) + f(n * 2, t, his + [n * 2]) + f(n * 5, t, his + [n * 5])
 
 
-print(f(41, 5, []))
+print(f(5, 115, []))
+
 
