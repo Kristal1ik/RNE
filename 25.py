@@ -53,6 +53,10 @@ def eval(n):
 
 from fnmatch import *
 
-for x in range(0, 10 ** 10, 4891):
-    if fnmatch(str(x), '1?2711*0'):
-        print(x)
+# for x in range(0, 10 ** 10, 4891):
+#     if fnmatch(str(x), '1?2711*0'):
+#         print(x)
+
+for i in range(2024, 10**10, 2024):
+    if fnmatch(str(i), "1?2157*4"):
+        print(i, i// 2024)
