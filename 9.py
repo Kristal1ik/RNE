@@ -70,3 +70,4 @@ for i in data:
         if proizv > f2_num ** 2:
             n += 1
 print(n)
+
