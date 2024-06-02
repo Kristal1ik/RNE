@@ -72,21 +72,22 @@
 # print(n)
 
 
-def triangle(lst):
+# def triangle(lst):
+#
+#     if lst[0] < lst[1] + lst[2] and lst[1] < lst[0] + lst[2] and lst[2] < lst[0] + lst[1]:
+#         return True
+#
+# with open("9__2_щелчок.csv") as f:
+#     data = f.read().splitlines()
+# n = 0
+# f = False
+# for i in data:
+#     if not f:
+#         i = i[3:]
+#         f = True
+#     i = list(map(int, i.split(";")))
+#     i_flag = triangle(i)
+#     if i_flag:
+#         n+=1
+# print(n)
 
-    if lst[0] < lst[1] + lst[2] and lst[1] < lst[0] + lst[2] and lst[2] < lst[0] + lst[1]:
-        return True
-
-with open("9__2_щелчок.csv") as f:
-    data = f.read().splitlines()
-n = 0
-f = False
-for i in data:
-    if not f:
-        i = i[3:]
-        f = True
-    i = list(map(int, i.split(";")))
-    i_flag = triangle(i)
-    if i_flag:
-        n+=1
-print(n)
