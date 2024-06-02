@@ -1,3 +1,7 @@
+import itertools
+from itertools import combinations, permutations, product
+
+
 # with open('9.txt') as f:
 #     data = f.read().splitlines()
 # n = 0
@@ -90,4 +94,26 @@
 #     if i_flag:
 #         n+=1
 # print(n)
+
+
+def comb(lst):
+    combin = list(combinations(lst, 3))
+    for i in combin:
+        if sum(i) % 2 == 0:
+            return True
+    return False
+
+
+with open("9_3_щелчок.csv") as f:
+    data = f.read().splitlines()
+n = 0
+f = False
+for i in data:
+    if not f:
+        i = i[3:]
+        f = True
+    i = list(map(int, i.split(";")))
+    if comb(i):
+        n += 1
+print(n)
 
