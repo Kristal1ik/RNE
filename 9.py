@@ -1,7 +1,3 @@
-import itertools
-from itertools import combinations, permutations, product
-
-
 # with open('9.txt') as f:
 #     data = f.read().splitlines()
 # n = 0
@@ -43,77 +39,35 @@ from itertools import combinations, permutations, product
 #         n += 1
 # print(n)
 
-# with open("9_4.txt", encoding="utf-8") as f:
-#     data = f.read().splitlines()
-# n = 0
-#
-# for i in data:
-#     line = list(map(int, i.split(";")))
-#     d = dict()
-#     for j in line:
-#         if j not in d:
-#             d[j] = 1
-#         else:
-#             d[j] += 1
-#     f2 = False
-#     f1_count = 0
-#     lst1 = []
-#     f2_num = 0
-#     for k, v in d.items():
-#         if v == 2:
-#             f2 = True
-#             f2_num = k
-#         elif v == 1:
-#             f1_count += 1
-#             lst1.append(k)
-#     if len(lst1) == 5 and f2:
-#         proizv = 1
-#         lst1 = sorted(lst1)[:3]
-#         for j in lst1:
-#             proizv *= j
-#         if proizv > f2_num ** 2:
-#             n += 1
-# print(n)
-
-
-# def triangle(lst):
-#
-#     if lst[0] < lst[1] + lst[2] and lst[1] < lst[0] + lst[2] and lst[2] < lst[0] + lst[1]:
-#         return True
-#
-# with open("9__2_щелчок.csv") as f:
-#     data = f.read().splitlines()
-# n = 0
-# f = False
-# for i in data:
-#     if not f:
-#         i = i[3:]
-#         f = True
-#     i = list(map(int, i.split(";")))
-#     i_flag = triangle(i)
-#     if i_flag:
-#         n+=1
-# print(n)
-
-
-def comb(lst):
-    combin = list(combinations(lst, 3))
-    for i in combin:
-        if sum(i) % 2 == 0:
-            return True
-    return False
-
-
-with open("9_3_щелчок.csv") as f:
+with open("9_4.txt", encoding="utf-8") as f:
     data = f.read().splitlines()
 n = 0
-f = False
+
 for i in data:
-    if not f:
-        i = i[3:]
-        f = True
-    i = list(map(int, i.split(";")))
-    if comb(i):
-        n += 1
+    line = list(map(int, i.split(";")))
+    d = dict()
+    for j in line:
+        if j not in d:
+            d[j] = 1
+        else:
+            d[j] += 1
+    f2 = False
+    f1_count = 0
+    lst1 = []
+    f2_num = 0
+    for k, v in d.items():
+        if v == 2:
+            f2 = True
+            f2_num = k
+        elif v == 1:
+            f1_count += 1
+            lst1.append(k)
+    if len(lst1) == 5 and f2:
+        proizv = 1
+        lst1 = sorted(lst1)[:3]
+        for j in lst1:
+            proizv *= j
+        if proizv > f2_num ** 2:
+            n += 1
 print(n)
 
