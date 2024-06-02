@@ -72,7 +72,6 @@
 # print(n)
 
 
-
 # def ost(lst):
 #     set_ost = set()
 #     for i in lst:
@@ -94,25 +93,47 @@
 #         n += 1
 # print(n)
 
-def sum_last(lst):
-    summ = 0
-    for i in lst:
-        summ += i % 10
-    if summ % 15 == 0:
+# def sum_last(lst):
+#     summ = 0
+#     for i in lst:
+#         summ += i % 10
+#     if summ % 15 == 0:
+#         return True
+#     return False
+#
+#
+# with open("9_5_щелчок.csv") as f:
+#     data = f.read().splitlines()
+# f = False
+# n = 0
+# for i in data:
+#     if not f:
+#         i = i[3:]
+#         f = True
+#     i = list(map(int, i.split(";")))
+#     if sum_last(i) and (sum(i) > sum(i) // len(i)):
+#         n += 1
+# print(n)
+#
+
+def one_repeat(lst):
+    set_lst = set(lst)
+    if len(set_lst) == len(lst):
         return True
     return False
 
 
-with open("9_5_щелчок.csv") as f:
+with open("9_7_щелчок.csv") as f:
     data = f.read().splitlines()
 f = False
 n = 0
 for i in data:
     if not f:
-        i = i[3:]
         f = True
-    i = list(map(int, i.split(";")))
-    if sum_last(i) and (sum(i) > sum(i) // len(i)):
+        i = i[3:]
+    i = sorted(list(map(int, i.split(";"))))
+    if one_repeat(i) and not((max(i) - min(i)) > i[1]):
+        n += 1
+    elif not one_repeat(i) and (max(i) - min(i)) > i[1]:
         n += 1
 print(n)
-
