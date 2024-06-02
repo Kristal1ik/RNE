@@ -73,23 +73,46 @@
 
 
 
-def ost(lst):
-    set_ost = set()
+# def ost(lst):
+#     set_ost = set()
+#     for i in lst:
+#         set_ost.add(i%6)
+#     if len(lst) == len(set_ost):
+#         return True
+#     return False
+#
+# with open("9_4_щелчок.csv") as f:
+#     data = f.read().splitlines()
+# n = 0
+# f = False
+# for i in data:
+#     if not f:
+#         i = i[3:]
+#         f = True
+#     i = list(map(int, i.split(";")))
+#     if ost(i) and (sum(i) % 25 == 0 or sum(i) % 7 == 0):
+#         n += 1
+# print(n)
+
+def sum_last(lst):
+    summ = 0
     for i in lst:
-        set_ost.add(i%6)
-    if len(lst) == len(set_ost):
+        summ += i % 10
+    if summ % 15 == 0:
         return True
     return False
 
-with open("9_4_щелчок.csv") as f:
+
+with open("9_5_щелчок.csv") as f:
     data = f.read().splitlines()
-n = 0
 f = False
+n = 0
 for i in data:
     if not f:
         i = i[3:]
         f = True
     i = list(map(int, i.split(";")))
-    if ost(i) and (sum(i) % 25 == 0 or sum(i) % 7 == 0):
+    if sum_last(i) and (sum(i) > sum(i) // len(i)):
         n += 1
 print(n)
+
