@@ -116,24 +116,62 @@
 # print(n)
 #
 
-def one_repeat(lst):
-    set_lst = set(lst)
-    if len(set_lst) == len(lst):
+# def one_repeat(lst):
+#     set_lst = set(lst)
+#     if len(set_lst) == len(lst):
+#         return True
+#     return False
+#
+#
+# with open("9_7_щелчок.csv") as f:
+#     data = f.read().splitlines()
+# f = False
+# n = 0
+# for i in data:
+#     if not f:
+#         f = True
+#         i = i[3:]
+#     i = sorted(list(map(int, i.split(";"))))
+#     if one_repeat(i) and not((max(i) - min(i)) > i[1]):
+#         n += 1
+#     elif not one_repeat(i) and (max(i) - min(i)) > i[1]:
+#         n += 1
+# print(n)
+
+def chet_nechet(lst):
+    chet = 0
+    nechet = 0
+    for i in range(1, len(lst) + 1):
+        if i % 2 == 0:
+            chet += lst[i - 1]
+        else:
+            nechet += lst[i - 1]
+    return abs(chet - nechet) > 40
+
+def twice(lst):
+    return len(lst) == (len(set(lst))+1)
+
+def sr(lst):
+    if (max(lst) + min(lst)) < (2 * (sum(lst) / len(lst))):
         return True
     return False
 
-
-with open("9_7_щелчок.csv") as f:
+with open("9_9_щелчок.csv") as f:
     data = f.read().splitlines()
-f = False
 n = 0
+f = False
 for i in data:
     if not f:
         f = True
         i = i[3:]
-    i = sorted(list(map(int, i.split(";"))))
-    if one_repeat(i) and not((max(i) - min(i)) > i[1]):
+    i = list(map(int, i.split(";")))
+    f1 = chet_nechet(i)
+    f2 = twice(i)
+    f3 = sr(i)
+    if f1 and not f2 and not f3:
         n += 1
-    elif not one_repeat(i) and (max(i) - min(i)) > i[1]:
+    elif not f1 and f2 and not f3:
+        n += 1
+    elif not f1 and not f2 and f3:
         n += 1
 print(n)
