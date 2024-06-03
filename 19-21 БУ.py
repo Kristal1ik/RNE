@@ -44,11 +44,12 @@ from functools import lru_cache  # импортируем кэширование
 
 @lru_cache(None)
 def f(a, b, c):
-    if a + b + c >= 300:
+    if a + b + c >= 150:
         return 0  # условие выигрыша
 
-    moves = [f(a+b+c, b, c), f(a, b+a+c, c), f(a, b, c+a+b),
-             f(a*3, b, c), f(a, b*3, c), f(a, b, c*3)]
+    moves = [f(a+16, b, c), f(a, b+16, c), f(a, b, c+16),
+             f(a*2, b, c), f(a, b*2, c), f(a, b, c*2),
+             f(a+32, b, c), f(a, b+32, c), f(a, b, c+32)]
     win_petya = [i for i in moves if i <= 0]
     if win_petya:
         return -max(win_petya) + 1
@@ -59,7 +60,7 @@ def f(a, b, c):
 n = 0
 lst = []
 for i in range(1, 101):
-    if f(45, i, i + 25) == 3 and not (f(45, i, i + 25) == 2) and not (f(45, i, i + 25) == 1):
+    if f(6, 2 * i, i * 3) == -2 and not(f(6, 2 * i, i * 3) == -1):
         lst.append(i)
         n += 1
 print(n)
