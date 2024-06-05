@@ -49,14 +49,14 @@
 #                 # print(i, j)
 # print(len_min)
 
-# for a in range(1, 1000):
-#     f = True
-#     for x in range(1, 1000):
-#         if not((x & 15 != 0) <= ((x & 34 == 0) <= (x & a != 0))):
-#             f = False
-#     if f:
-#         print(a)
-#         break
+for a in range(1, 1000):
+    f = True
+    for x in range(1, 1000):
+        if not((x & 15 != 0) <= ((x & 34 == 0) <= (x & a != 0))):
+            f = False
+    if f:
+        print(a)
+        break
 
 # p = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]
 # q = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36]
@@ -168,11 +168,29 @@
 #     if flag:
 #         print(a)
 
-for a in range(1, 1000):
-    flag = True
-    for x in range(1, 1000):
-        if not (((x % 45 == 0) and (x % 70 == 0)) <= (x % a == 0)):
-            flag = False
-            break
-    if flag:
-        print(a)
+# for a in range(1, 1000):
+#     flag = True
+#     for x in range(1, 1000):
+#         if not (((x % 45 == 0) and (x % 70 == 0)) <= (x % a == 0)):
+#             flag = False
+#             break
+#     if flag:
+#         print(a)
+
+# for a in range(1, 1000):
+#     flag = True
+#     for x in range(1, 1000):
+#         if not((x&10 != 0) or (x&39 ==0) or (x&a == 0)):
+#             flag = False
+#             break
+#     if flag:
+#         print(a)
+
+# for a in range(1, 10000):
+#     flag = True
+#     for x in range(1, 10000):
+#         if ((((x % a == 0) and (x % 36 == 0)) <= (x % 324 == 0)) and (a > 100)) == 0:
+#             flag = False
+#             break
+#     if flag:
+#         print(a)
