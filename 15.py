@@ -133,18 +133,37 @@
 #     if flag:
 #         print(a)
 
-def f(x, left_a, right_a):
-    return (100 <= x <= 180) <= (((145 <= x <= 200) and (not (left_a <= x <= right_a))) <= (not (100 <= x <= 180)))
+# def f(x, left_a, right_a):
+#     return (100 <= x <= 180) <= (((145 <= x <= 200) and (not (left_a <= x <= right_a))) <= (not (100 <= x <= 180)))
+#
+#
+# min_len = 1e9
+# for i in range(1, 300):
+#     for j in range(i + 1, 300):
+#         flag = True
+#         for x in range(1, 250):
+#             if not (f(x, i, j)):
+#                 flag = False
+#         if flag:
+#             if min_len > j - i:
+#                 min_len = j - i
+# print(min_len)
 
-
-min_len = 1e9
-for i in range(1, 300):
-    for j in range(i + 1, 300):
-        flag = True
-        for x in range(1, 250):
-            if not (f(x, i, j)):
-                flag = False
-        if flag:
-            if min_len > j - i:
-                min_len = j - i
-print(min_len)
+# for a in range(1, 300):
+#     flag = True
+#     for x in range(1, 300):
+#         for y in range(1, 300):
+#             if not((x > a) or (y > a) or (2*x+y!=48)):
+#                 flag = False
+#                 break
+#     if flag:
+#         print(a)
+#
+# for a in range(1, 300):
+#     flag = True
+#     for x in range(1, 300):
+#         if not((x&a != 0) <= ((x &17 == 0) <= (x&33 != 0))):
+#             flag = False
+#             break
+#     if flag:
+#         print(a)
