@@ -105,3 +105,21 @@
 #     if flag:
 #         print(a)
 
+# for a in range(1, 300):
+#     flag = True
+#     for x in range(1, 300):
+#         for y in range(1, 300):
+#             if not(((y ** 2 + y > a) <= (y > 8)) and ((x ** 2 + 3 * x > a) <= (x > 15))):
+#                 flag = False
+#                 break
+#     if flag:
+#         print(a)
+
+for a in range(1, 100):
+    flag = True
+    for x in range(1, 300):
+        for y in range(1, 300):
+            if not ((x - y >= 5) or (x <= a) or (y >= a) or (x + y <= 64)):
+                flag = False
+    if flag:
+        print(a)
