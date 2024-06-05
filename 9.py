@@ -138,40 +138,79 @@
 #         n += 1
 # print(n)
 
-def chet_nechet(lst):
-    chet = 0
-    nechet = 0
-    for i in range(1, len(lst) + 1):
-        if i % 2 == 0:
-            chet += lst[i - 1]
+# def chet_nechet(lst):
+#     chet = 0
+#     nechet = 0
+#     for i in range(1, len(lst) + 1):
+#         if i % 2 == 0:
+#             chet += lst[i - 1]
+#         else:
+#             nechet += lst[i - 1]
+#     return abs(chet - nechet) > 40
+#
+# def twice(lst):
+#     return len(lst) == (len(set(lst))+1)
+#
+# def sr(lst):
+#     if (max(lst) + min(lst)) < (2 * (sum(lst) / len(lst))):
+#         return True
+#     return False
+#
+# with open("9_9_щелчок.csv") as f:
+#     data = f.read().splitlines()
+# n = 0
+# f = False
+# for i in data:
+#     if not f:
+#         f = True
+#         i = i[3:]
+#     i = list(map(int, i.split(";")))
+#     f1 = chet_nechet(i)
+#     f2 = twice(i)
+#     f3 = sr(i)
+#     if f1 and not f2 and not f3:
+#         n += 1
+#     elif not f1 and f2 and not f3:
+#         n += 1
+#     elif not f1 and not f2 and f3:
+#         n += 1
+# print(n)
+
+def one_repeat(lst):
+    d = dict()
+    for j in lst:
+        if j not in d.keys():
+            d[j] = 1
         else:
-            nechet += lst[i - 1]
-    return abs(chet - nechet) > 40
+            d[j] += 1
+    one = 0
+    two = 0
+    one_nums = []
+    two_num = 0
 
-def twice(lst):
-    return len(lst) == (len(set(lst))+1)
+    for k, v in d.items():
+        if v == 1:
+            one += 1
+            one_nums.append(k)
+        elif v == 3:
+            two += 1
+            two_num = k
+    if len(one_nums) == 4 and two == 1:
+        one_nums = sorted(one_nums)
+        print(one_nums, two_num)
+        if (sum(one_nums)) / len(one_nums) < two_num :
+            return True
 
-def sr(lst):
-    if (max(lst) + min(lst)) < (2 * (sum(lst) / len(lst))):
-        return True
-    return False
 
-with open("9_9_щелчок.csv") as f:
+with open("9._егкр2csv.csv") as f:
     data = f.read().splitlines()
 n = 0
-f = False
+f = True
 for i in data:
-    if not f:
-        f = True
+    if f:
         i = i[3:]
+        f = False
     i = list(map(int, i.split(";")))
-    f1 = chet_nechet(i)
-    f2 = twice(i)
-    f3 = sr(i)
-    if f1 and not f2 and not f3:
-        n += 1
-    elif not f1 and f2 and not f3:
-        n += 1
-    elif not f1 and not f2 and f3:
+    if one_repeat(i):
         n += 1
 print(n)
