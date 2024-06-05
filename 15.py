@@ -114,12 +114,22 @@
 #                 break
 #     if flag:
 #         print(a)
+#
+# for a in range(1, 100):
+#     flag = True
+#     for x in range(1, 300):
+#         for y in range(1, 300):
+#             if not ((x - y >= 5) or (x <= a) or (y >= a) or (x + y <= 64)):
+#                 flag = False
+#     if flag:
+#         print(a)
 
-for a in range(1, 100):
-    flag = True
-    for x in range(1, 300):
-        for y in range(1, 300):
-            if not ((x - y >= 5) or (x <= a) or (y >= a) or (x + y <= 64)):
-                flag = False
-    if flag:
-        print(a)
+# for a in range(1, 300):
+#     flag = True
+#     for x in range(1, 300):
+#         if not(((x & 45 != 0) or (x & 28 != 0) or (x & 56 != 0)) <= (x & a != 0)):
+#             flag = False
+#             break
+#     if flag:
+#         print(a)
+
