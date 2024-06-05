@@ -133,3 +133,18 @@
 #     if flag:
 #         print(a)
 
+def f(x, left_a, right_a):
+    return (100 <= x <= 180) <= (((145 <= x <= 200) and (not (left_a <= x <= right_a))) <= (not (100 <= x <= 180)))
+
+
+min_len = 1e9
+for i in range(1, 300):
+    for j in range(i + 1, 300):
+        flag = True
+        for x in range(1, 250):
+            if not (f(x, i, j)):
+                flag = False
+        if flag:
+            if min_len > j - i:
+                min_len = j - i
+print(min_len)
