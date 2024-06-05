@@ -71,11 +71,28 @@
 #         lst_a.append(a)
 # print(lst_a)
 
-for a in range(1, 300):
-    flag = True
-    for x in range(1, 300):
-        for y in range(1, 300):
-            if not((2 * x + y > a) or (y < x) or (x < 28)):
-                flag = False
-    if flag:
-        print(a)
+# for a in range(1, 300):
+#     flag = True
+#     for x in range(1, 300):
+#         for y in range(1, 300):
+#             if not((2 * x + y > a) or (y < x) or (x < 28)):
+#                 flag = False
+#     if flag:
+#         print(a)
+
+
+def f(x, a_left, a_right):
+    return (a_left <= x <= a_right) <= ((10 <= x <= 35) and (not (45 <= x <= 78)))
+
+
+m = 0
+for i in range(0, 100):
+    for j in range(i, 100):
+        check = 1
+        for x in range(0, 101):
+            if not f(x, i, j):
+                check = 0
+                break
+        if check == 1:
+            m = max(m, j - i)
+print(m)
