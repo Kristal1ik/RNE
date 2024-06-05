@@ -81,18 +81,27 @@
 #         print(a)
 
 
-def f(x, a_left, a_right):
-    return (a_left <= x <= a_right) <= ((10 <= x <= 35) and (not (45 <= x <= 78)))
+# def f(x, a_left, a_right):
+#     return (a_left <= x <= a_right) <= ((10 <= x <= 35) and (not (45 <= x <= 78)))
+#
+#
+# m = 0
+# for i in range(0, 100):
+#     for j in range(i, 100):
+#         check = 1
+#         for x in range(0, 101):
+#             if not f(x, i, j):
+#                 check = 0
+#                 break
+#         if check == 1:
+#             m = max(m, j - i)
+# print(m)
 
+# for a in range(1, 1000):
+#     flag = True
+#     for x in range(1, 1000):
+#         if not ((a % 12 == 0) and ((530 % x == 0) <= ((a % x != 0) <= (170 % x != 0)))):
+#              flag = False
+#     if flag:
+#         print(a)
 
-m = 0
-for i in range(0, 100):
-    for j in range(i, 100):
-        check = 1
-        for x in range(0, 101):
-            if not f(x, i, j):
-                check = 0
-                break
-        if check == 1:
-            m = max(m, j - i)
-print(m)
