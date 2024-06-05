@@ -6,6 +6,8 @@
 #     if len(i) == len(set(i)) and (((max(i) + min(i)) / 2) < (sum(i) / len(i))):
 #         n += 1
 # print(n)
+import math
+
 
 # data = [1,2,2]
 # sums = {}
@@ -214,3 +216,5 @@ for i in data:
     if one_repeat(i):
         n += 1
 print(n)
+
+print(math.log(3999, 2))
