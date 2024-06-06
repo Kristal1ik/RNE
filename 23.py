@@ -136,4 +136,11 @@
 # print(f(31, 60, []))
 
 
-def f()
+def f(start, finish, his):
+    if start == finish and 9 in his and 21 not in his:
+        return 1
+    if start > finish:
+        return 0
+    return f(start + 1, finish, his + [start + 1]) + f(start * 2, finish, his + [start * 2]) + f(start * 3, finish,
+                                                                                                 his + [start * 3])
+print(f(2, 37, []))
