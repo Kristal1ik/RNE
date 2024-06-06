@@ -228,17 +228,25 @@
 # print(max_n)
 
 
-with open("24_12.txt") as file:
-    data = file.read()
-mx_posl = 0
-posl = 1
-for i in range(len(data) - 1):
-    if (data[i] == "X" and data[i+1] == "X") or (data[i] == "Y" and data[i+1] == "Y"):
-        if mx_posl < posl:
-            mx_posl = posl
-        posl = 1
-    else:
-        posl += 1
-        # print(data[i], data[i+1])
+# with open("24_12.txt") as file:
+#     data = file.read()
+# mx_posl = 0
+# posl = 1
+# for i in range(len(data) - 1):
+#     if (data[i] == "X" and data[i+1] == "X") or (data[i] == "Y" and data[i+1] == "Y"):
+#         if mx_posl < posl:
+#             mx_posl = posl
+#         posl = 1
+#     else:
+#         posl += 1
+#         # print(data[i], data[i+1])
+#
+# print(mx_posl)
 
-print(mx_posl)
+with open("24_егкр.txt") as f:
+    data = f.read()
+
+# for i in range(1, 1000):
+#     if i * "FSWY" in data:
+#         print(i)
+print(45 * "FSWY")
