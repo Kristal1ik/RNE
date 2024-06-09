@@ -48,15 +48,16 @@
 #                 len_min = j - i
 #                 # print(i, j)
 # print(len_min)
+#
+# for a in range(1, 1000):
+#     f = True
+#     for x in range(1, 1000):
+#         if not ((x & 15 != 0) <= ((x & 34 == 0) <= (x & a != 0))):
+#             f = False
+#     if f:
+#         print(a)
+#         break
 
-for a in range(1, 1000):
-    f = True
-    for x in range(1, 1000):
-        if not((x & 15 != 0) <= ((x & 34 == 0) <= (x & a != 0))):
-            f = False
-    if f:
-        print(a)
-        break
 
 # p = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]
 # q = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36]
@@ -194,3 +195,28 @@ for a in range(1, 1000):
 #             break
 #     if flag:
 #         print(a)
+#
+# def f(x, a_left, a_right):
+#     return (47 <= x <= 115) <= (((24 <= x <= 90) and (not (a_left <= x <= a_right))) <= (not (47 <= x <= 115)))
+#
+# len_min = 1e9
+# for i in range(-100, 300):
+#     for j in range(i + 1, 300):
+#         flag = True
+#         for x in range(1, 300):
+#             if not (f(x, i, j)):
+#                 flag = False
+#                 break
+#         if flag:
+#             if len_min > j-i:
+#                 len_min = j-i
+# print(len_min)
+
+for a in range(1, 300):
+    flag = True
+    for x in range(1, 300):
+        if not((not(x%a==0)) <= ((x%28==0) <= (not(x%49 ==0 )))):
+            flag = False
+            break
+    if flag:
+        print(a)
