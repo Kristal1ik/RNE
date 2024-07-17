@@ -1,3 +1,4 @@
+
 # def f(s):
 #     while '12' in s or '5522' in s or '2222' in s:
 #         if '12' in s:
